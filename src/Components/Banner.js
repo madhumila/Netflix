@@ -1,7 +1,13 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import "./Banner.css"
-
+import { API_KEY } from '../Constants/Constant'
+import axios from "./Components/axios"
 function Banner() {
+    useEffect(()=>{
+        axios.get("trending/all/week?api_key=${API_KEY}&language=en-US").then((response)=>{
+            console.log(response.data)
+        })
+    },[])
   return (
     <div className='banner'>
         <div className='content'>
@@ -13,11 +19,7 @@ function Banner() {
             <h1 className='description'>In publishing and graphic design uiuhu euhuehufe ehfejhygc cftctfy ytgftrdrt</h1>
         </div>
         <div className="fade_bottom"></div>
-
-
-      
     </div>
   )
 }
-
 export default Banner

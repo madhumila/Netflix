@@ -16,3 +16,7 @@ overflow-y: hidden;
 .posters::-webkit-scrollbar{
     display: none;
 }
+.smallPoster{
+    max-height: 100px;
+    
+}
